@@ -26,6 +26,7 @@
 		9953EC5726DFC4D4001EBFC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9953EC5A26DFC4D4001EBFC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9953EC5C26DFC4D4001EBFC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9953EC6226DFD7E9001EBFC5 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +43,7 @@
 		9953EC3F26DFC4D1001EBFC5 = {
 			isa = PBXGroup;
 			children = (
+				9953EC6226DFD7E9001EBFC5 /* Development.xcconfig */,
 				9953EC4A26DFC4D1001EBFC5 /* Time Goals */,
 				9953EC4926DFC4D1001EBFC5 /* Products */,
 			);
@@ -287,6 +289,7 @@
 		};
 		9953EC6026DFC4D4001EBFC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9953EC6226DFD7E9001EBFC5 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -39,7 +39,14 @@ struct ContentView: View {
         guard let url = URL(string: "https://api.track.toggl.com/api/v8/time_entries") else {
             return
         }
-        let authorizationToken = "Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        let apiToken = (Bundle.main.infoDictionary?["TOGGL_API_TOKEN"] as? String)!
+
+        let utf8Token = "\(apiToken):api_token".data(using: .utf8)
+        guard let base64EncodedToken = utf8Token?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0)) else {
+            print("Error encoding Toggl token")
+            return
+        }
+        let authorizationToken = "Basic \(base64EncodedToken)"
 
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -65,7 +72,6 @@ struct ContentView: View {
             
             DispatchQueue.main.async {
                 self.timeEntries = response
-                print(response)
             }
         }.resume()
     }
